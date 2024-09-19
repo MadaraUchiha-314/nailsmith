@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/MadaraUchiha-314/nailsmith#readme",
   "scripts": {
-    "lint": "oxlint",
+    "lint": "oxlint --deny-warnings",
     "prepare": "husky"
   },
   "devDependencies": {
