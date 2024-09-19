@@ -1,0 +1,11 @@
+{
+  "name": "@nailsmith/bff",
+  "version": "1.0.0",
+  "description": "A backend for micro-frontend orchestration",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}

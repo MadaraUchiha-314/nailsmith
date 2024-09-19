@@ -1,0 +1,25 @@
+{
+  "name": "nailsmith",
+  "version": "1.0.0",
+  "description": "A minimal example of how we can do SSR with module federation",
+  "workspaces": [
+    "packages/bff",
+    "packages/shell",
+    "packages/remote-a"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadaraUchiha-314/nailsmith.git"
+  },
+  "keywords": [
+    "node",
+    "ssr",
+    "module-federation"
+  ],
+  "author": "Rohith Ramakrishnan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MadaraUchiha-314/nailsmith/issues"
+  },
+  "homepage": "https://github.com/MadaraUchiha-314/nailsmith#readme"
+}
