@@ -3,9 +3,26 @@
   "version": "1.0.0",
   "description": "A shell for the micro-frontend system",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "rm -rf && webpack serve --mode development",
+    "build": "rm -rf dist/ && webpack --mode production"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "typescript": "5.6.2",
+    "ts-loader": "9.5.1",
+    "@types/react": "18.3.7",
+    "@types/react-dom": "18.3.0",
+    "webpack": "5.94.0",
+    "webpack-cli": "5.1.4",
+    "@swc/core": "1.7.26",
+    "swc-loader": "0.2.6",
+    "webpack-dev-server": "5.1.0"
+  }
 }
