@@ -1,1 +1,3 @@
-console.log("Hello, World")
+import express, { type Express } from 'express'
+
+export function run() {}
