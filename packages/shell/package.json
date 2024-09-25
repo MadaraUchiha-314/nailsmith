@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "rm -rf dist/ && webpack --mode development serve",
+    "dev": "rm -rf dist/ && webpack serve --mode development",
     "build": "rm -rf dist/ && webpack --mode production"
   },
   "author": "",
