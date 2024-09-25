@@ -1,11 +1,13 @@
 import path from 'node:path'
-import ModuleFederationPlugin from 'webpack/lib/container/ModuleFederationPlugin.js'
+import NodeFederation from '@module-federation/node'
+const { UniversalFederationPlugin } = NodeFederation
 
 const __dirname = path.resolve('.')
 
 const BASE_PLUGINS = []
 
 const BASE_CONFIG = {
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -40,28 +42,39 @@ export default [
     plugins: BASE_PLUGINS.concat([]),
     devServer: {
       port: 3001,
+      static: {
+        directory: path.resolve(__dirname, 'dist'),
+      },
+      devMiddleware: {
+        writeToDisk: true,
+      },
     },
   },
   {
     ...BASE_CONFIG,
     entry: {
-      app: './src/app.tsx',
+      'no-op': './src/no-op.ts',
     },
     output: {
       path: path.resolve(__dirname, `dist/app`),
       library: {
-        type: 'commonjs',
+        type: 'commonjs-module',
       },
+      publicPath: 'auto',
     },
+    target: 'async-node',
     plugins: BASE_PLUGINS.concat([
-      new ModuleFederationPlugin({
+      new UniversalFederationPlugin({
+        remoteType: 'script',
+        useRuntimePlugin: true,
         name: 'shell_app',
-        filename: 'remoteEntry.js',
+        isServer: true,
+        filename: 'shell-remote-entry.js',
         exposes: {
           './app': './src/app.tsx',
         },
         library: {
-          type: 'commonjs',
+          type: 'commonjs-module',
         },
       }),
     ]),
