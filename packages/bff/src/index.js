@@ -5,20 +5,20 @@ import nodeRuntimePlugin from '@module-federation/node/runtimePlugin'
 export async function run() {
   const app = express()
   const port = 3000
-
   init({
     name: '@nailsmith/bff',
     remotes: [
       {
         name: '@nailsmith/shell',
-        entry: 'http://localhost:3001/remoteEntry.js',
+        entry: 'http://localhost:3001/app/shell-remote-entry.js',
         alias: 'shell',
+        remoteType: 'script',
       },
     ],
     plugins: [nodeRuntimePlugin()],
   })
 
-  const MyConst = (await loadRemote<{ MyConst: string }>('shell'))?.MyConst
+  const MyConst = (await loadRemote('shell/app'))?.MyConst
 
   app.get('/', (_, res) => {
     res.send(`Hello World! MyConst is ${MyConst}`)

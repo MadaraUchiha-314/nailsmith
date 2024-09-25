@@ -7,8 +7,8 @@ A minimal example of how we can do SSR with module federation
 ```sh
 # Install deps
 npm i
+# Run the shell first
+npm run dev --workspace packages/shell
 # Run the node server for the backend
 npm run dev --workspace packages/bff
-# Run the shell
-npm run dev --workspace packages/shell
 ```
