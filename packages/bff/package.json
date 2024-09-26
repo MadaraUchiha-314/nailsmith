@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "nodemon",
     "start": "rm -rf dist/ && webpack --mode development && node ./dist/index.js",
-    "start:debug": "rm -rf dist/ && webpack --mode development && node --inspect-brk ./dist/index.js",
-    "build": "webpack --mode production",
+    "start:debug": "node --inspect-brk ./dist/index.js",
+    "build": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rohith Ramakrishnan",

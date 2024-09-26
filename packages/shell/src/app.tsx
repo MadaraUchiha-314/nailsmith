@@ -29,4 +29,4 @@ export const App = () => {
   )
 }
 
-export const MyConst = 123
+export const MyConst = 'done for the day'

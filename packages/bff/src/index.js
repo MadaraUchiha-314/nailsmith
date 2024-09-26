@@ -1,6 +1,7 @@
 import express from 'express'
 import { init, loadRemote } from '@module-federation/runtime'
 import nodeRuntimePlugin from '@module-federation/node/runtimePlugin'
+import { revalidate } from '@module-federation/node/utils'
 
 export async function run() {
   const app = express()
@@ -22,6 +23,10 @@ export async function run() {
   const MyConst = (await loadRemote('shell_app/app'))?.MyConst
 
   app.get('/', (_, res) => {
+    const shouldReload = revalidate()
+    if (shouldReload) {
+      console.log('[LOG] shouldReload is true')
+    }
     res.send(`Hello World! MyConst is ${MyConst}`)
   })
 
