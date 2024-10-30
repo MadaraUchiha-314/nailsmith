@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "rm -rf dist/ && webpack serve --mode development",
-    "build": "rm -rf dist/ && webpack --mode production"
+    "build": "rm -rf dist/ && webpack --mode development"
   },
   "author": "",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "@swc/core": "1.7.26",
     "swc-loader": "0.2.6",
     "webpack-dev-server": "5.1.0",
-    "@module-federation/node": "2.5.16",
-    "@module-federation/enhanced": "0.6.6"
+    "@module-federation/node": "2.6.2",
+    "@module-federation/enhanced": "0.6.14"
   }
 }
