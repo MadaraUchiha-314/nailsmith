@@ -29,4 +29,4 @@ export const App = () => {
   )
 }
 
-export const MyConst = 'done for the day 777'
+export const MyConst = 'done for the day 123'
